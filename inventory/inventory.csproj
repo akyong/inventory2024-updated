@@ -1,0 +1,629 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8469D0D-9853-41C5-8D68-E4C45CE7C9FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>inventory</RootNamespace>
+    <AssemblyName>inventory</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\vpc2\Documents\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B0E9C6A861E1474EABDCE80E8D7F34A76DB3F482</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>inventory_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoCompleteTextbox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Category.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboboxItem.cs" />
+    <Compile Include="CompanyInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CompanyInfo.Designer.cs">
+      <DependentUpon>CompanyInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection.cs" />
+    <Compile Include="copyright.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="copyright.Designer.cs">
+      <DependentUpon>copyright.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer.Designer.cs">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignFor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignFor.Designer.cs">
+      <DependentUpon>DesignFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Encrypt.cs" />
+    <Compile Include="EncryptorRijandael.cs" />
+    <Compile Include="EncryptorSHA256.cs" />
+    <Compile Include="formpickdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formpickdate.Designer.cs">
+      <DependentUpon>formpickdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GroupItem.Designer.cs">
+      <DependentUpon>GroupItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gudang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gudang.Designer.cs">
+      <DependentUpon>Gudang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Item.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KelompokCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KelompokCustomer.Designer.cs">
+      <DependentUpon>KelompokCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KelompokSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KelompokSupplier.Designer.cs">
+      <DependentUpon>KelompokSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frompickdatebuy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frompickdatebuy.Designer.cs">
+      <DependentUpon>frompickdatebuy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Market\AutoCompleteTextBox.cs" />
+    <Compile Include="Market\DeliveryOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Market\DeliveryOrder.Designer.cs">
+      <DependentUpon>DeliveryOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Market\ReturInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Market\ReturInvoice.Designer.cs">
+      <DependentUpon>ReturInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Market\SalesInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Market\SalesInvoice.Designer.cs">
+      <DependentUpon>SalesInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Market\SalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Market\SalesOrder.Designer.cs">
+      <DependentUpon>SalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIForm.Designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pajak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pajak.Designer.cs">
+      <DependentUpon>Pajak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Purchase\PurchaseInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\PurchaseInvoice.Designer.cs">
+      <DependentUpon>PurchaseInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\PurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\PurchaseOrder.Designer.cs">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Purchase\ReceivedItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Purchase\ReceivedItem.Designer.cs">
+      <DependentUpon>ReceivedItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\BuktiDeliveryOrderKosong.cs">
+      <DependentUpon>BuktiDeliveryOrderKosong.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reporting\BuktiDeliveryOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiDeliveryOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\BuktiPindahGudang.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiPindahGudang.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\BuktiPurchaseInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiPurchaseInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\BuktiPurchaseOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiPurchaseOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\BuktiReceivedItem.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiReceivedItem.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\BuktiSalesInvoice-dinga.cs">
+      <DependentUpon>BuktiSalesInvoice-dinga.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="reporting\BuktiSalesInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiSalesInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\BuktiSalesOrder.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiSalesOrder.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\LaporanPembelian.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPembelian.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\LaporanPenjualan.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaporanPenjualan.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="reporting\ReportViewerDeliveryOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerDeliveryOrder.Designer.cs">
+      <DependentUpon>ReportViewerDeliveryOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerLaporanPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerLaporanPembelian.Designer.cs">
+      <DependentUpon>ReportViewerLaporanPembelian.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerLaporanPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerLaporanPenjualan.Designer.cs">
+      <DependentUpon>ReportViewerLaporanPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerPindahGudang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerPindahGudang.Designer.cs">
+      <DependentUpon>ReportViewerPindahGudang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerPurchaseInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerPurchaseInvoice.Designer.cs">
+      <DependentUpon>ReportViewerPurchaseInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerPurchaseOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerPurchaseOrder.Designer.cs">
+      <DependentUpon>ReportViewerPurchaseOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerReceivedItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerReceivedItem.Designer.cs">
+      <DependentUpon>ReportViewerReceivedItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerSalesInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerSalesInvoice.Designer.cs">
+      <DependentUpon>ReportViewerSalesInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporting\ReportViewerSalesOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="reporting\ReportViewerSalesOrder.Designer.cs">
+      <DependentUpon>ReportViewerSalesOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSetting.cs" />
+    <Compile Include="searching\ResultTable.cs" />
+    <Compile Include="searching\SearchCategory.cs" />
+    <Compile Include="searching\SearchReceivedItem.cs" />
+    <Compile Include="searching\SearchDeliveryOrder.cs" />
+    <Compile Include="searching\SearchPurchaseInvoice.cs" />
+    <Compile Include="searching\SearchSalesInvoice.cs" />
+    <Compile Include="searching\SearchPurchaseOrder.cs" />
+    <Compile Include="searching\SearchSalesOrder.cs" />
+    <Compile Include="searching\SearchSupplier.cs" />
+    <Compile Include="searching\SearchCustomer.cs" />
+    <Compile Include="searching\SearchGroupCustomer.cs" />
+    <Compile Include="searching\SearchGroupItem.cs" />
+    <Compile Include="searching\SearchGroupSupplier.cs" />
+    <Compile Include="searching\SearchItem.cs" />
+    <Compile Include="searching\SearchPindahGudang.cs" />
+    <Compile Include="searching\SearchTax.cs" />
+    <Compile Include="searching\SearchUnit.cs" />
+    <Compile Include="searching\SearchWarehouse.cs" />
+    <Compile Include="StockChange.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockChange.Designer.cs">
+      <DependentUpon>StockChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockItem.Designer.cs">
+      <DependentUpon>StockItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Unit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Unit.Designer.cs">
+      <DependentUpon>Unit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateStock.cs" />
+    <Compile Include="User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyInfo.resx">
+      <DependentUpon>CompanyInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="copyright.resx">
+      <DependentUpon>copyright.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer.resx">
+      <DependentUpon>Customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignFor.resx">
+      <DependentUpon>DesignFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formpickdate.resx">
+      <DependentUpon>formpickdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupItem.resx">
+      <DependentUpon>GroupItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gudang.resx">
+      <DependentUpon>Gudang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KelompokCustomer.resx">
+      <DependentUpon>KelompokCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KelompokSupplier.resx">
+      <DependentUpon>KelompokSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frompickdatebuy.resx">
+      <DependentUpon>frompickdatebuy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Market\DeliveryOrder.resx">
+      <DependentUpon>DeliveryOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Market\ReturInvoice.resx">
+      <DependentUpon>ReturInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Market\SalesInvoice.resx">
+      <DependentUpon>SalesInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Market\SalesOrder.resx">
+      <DependentUpon>SalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pajak.resx">
+      <DependentUpon>Pajak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Purchase\PurchaseInvoice.resx">
+      <DependentUpon>PurchaseInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\PurchaseOrder.resx">
+      <DependentUpon>PurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Purchase\ReceivedItem.resx">
+      <DependentUpon>ReceivedItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiDeliveryOrderKosong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiDeliveryOrderKosong.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiDeliveryOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiDeliveryOrder.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiPindahGudang.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiPindahGudang.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiPurchaseInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiPurchaseInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiPurchaseOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiPurchaseOrder.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiReceivedItem.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiReceivedItem.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiSalesInvoice-dinga.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiSalesInvoice-dinga.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiSalesInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiSalesInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiSalesOrder.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiSalesOrder.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\LaporanPembelian.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPembelian.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\LaporanPenjualan.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>LaporanPenjualan.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerDeliveryOrder.resx">
+      <DependentUpon>ReportViewerDeliveryOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerLaporanPembelian.resx">
+      <DependentUpon>ReportViewerLaporanPembelian.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerLaporanPenjualan.resx">
+      <DependentUpon>ReportViewerLaporanPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerPindahGudang.resx">
+      <DependentUpon>ReportViewerPindahGudang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerPurchaseInvoice.resx">
+      <DependentUpon>ReportViewerPurchaseInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerPurchaseOrder.resx">
+      <DependentUpon>ReportViewerPurchaseOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerReceivedItem.resx">
+      <DependentUpon>ReportViewerReceivedItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerSalesInvoice.resx">
+      <DependentUpon>ReportViewerSalesInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporting\ReportViewerSalesOrder.resx">
+      <DependentUpon>ReportViewerSalesOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockChange.resx">
+      <DependentUpon>StockChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockItem.resx">
+      <DependentUpon>StockItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Unit.resx">
+      <DependentUpon>Unit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="inventory_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo-web.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

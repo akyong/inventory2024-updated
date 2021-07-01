@@ -178,8 +178,12 @@ namespace inventory
             try
             {
                 Connection.ConnectionOpenLogin(serverTxt.Text, dbTxt.Text, userdbTxt.Text, passworddbTxt.Text);
+                Console.WriteLine("serverTxt.Text = " + serverTxt.Text);
+                Console.WriteLine("dbTxt.Text = " + dbTxt.Text);
+                Console.WriteLine("userdbTxt.Text = " + userdbTxt.Text);
+                Console.WriteLine("passworddbTxt.Text = " + passworddbTxt.Text);
                 string passwordhash = Encrypt.Hash(passwordTxt.Text);
-                string query = "SELECT * from  users WHERE username=@username and delete_Flag='N' ";
+                string query = "SELECT * from users WHERE username=@username and delete_Flag='N' ";
                 Connection.command = new OleDbCommand(query, Connection.conn);
                 Connection.command.Parameters.AddWithValue("@username", usernameTxt.Text);
                 //Connection.command.Parameters.AddWithValue("@password", passwordhash);
@@ -230,6 +234,7 @@ namespace inventory
             }
             catch (Exception Ex)
             {
+                MessageBox.Show(Ex.ToString(), "Login . . .", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("e = " + Ex);
             }
 
@@ -284,6 +289,11 @@ namespace inventory
             {
                 button4_Click(this, new EventArgs());
             }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Connection.ConnectionOpenLogin(serverTxt.Text, dbTxt.Text, userdbTxt.Text, passworddbTxt.Text);
         }
     }
 }

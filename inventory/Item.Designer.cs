@@ -34,6 +34,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.idgudang = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete_flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionTxt = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.nameTxt = new System.Windows.Forms.TextBox();
@@ -52,18 +64,6 @@
             this.cmbCategory = new System.Windows.Forms.ComboBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.category = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete_flag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -123,165 +123,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(711, 282);
             this.dataGridView1.TabIndex = 71;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // descriptionTxt
-            // 
-            this.descriptionTxt.Location = new System.Drawing.Point(356, 51);
-            this.descriptionTxt.Name = "descriptionTxt";
-            this.descriptionTxt.Size = new System.Drawing.Size(156, 20);
-            this.descriptionTxt.TabIndex = 77;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(295, 55);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 13);
-            this.label4.TabIndex = 70;
-            this.label4.Text = "Deskripsi";
-            // 
-            // nameTxt
-            // 
-            this.nameTxt.Location = new System.Drawing.Point(108, 30);
-            this.nameTxt.Name = "nameTxt";
-            this.nameTxt.Size = new System.Drawing.Size(156, 20);
-            this.nameTxt.TabIndex = 69;
-            // 
-            // codeTxt
-            // 
-            this.codeTxt.Location = new System.Drawing.Point(108, 11);
-            this.codeTxt.Name = "codeTxt";
-            this.codeTxt.Size = new System.Drawing.Size(156, 20);
-            this.codeTxt.TabIndex = 68;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 13);
-            this.label2.TabIndex = 67;
-            this.label2.Text = "Nama Barang";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Kode Barang";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(179, 99);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 74;
-            this.button3.Text = "DELETE";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(98, 99);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 73;
-            this.button2.Text = "EDIT";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // priceTxt
-            // 
-            this.priceTxt.Location = new System.Drawing.Point(108, 49);
-            this.priceTxt.Name = "priceTxt";
-            this.priceTxt.Size = new System.Drawing.Size(156, 20);
-            this.priceTxt.TabIndex = 78;
-            this.priceTxt.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(4, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 79;
-            this.label3.Text = "Harga Jual";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(295, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(41, 13);
-            this.label6.TabIndex = 83;
-            this.label6.Text = "Satuan";
-            // 
-            // cmbUnit
-            // 
-            this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbUnit.FormattingEnabled = true;
-            this.cmbUnit.Location = new System.Drawing.Point(356, 11);
-            this.cmbUnit.Name = "cmbUnit";
-            this.cmbUnit.Size = new System.Drawing.Size(156, 21);
-            this.cmbUnit.TabIndex = 84;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(295, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
-            this.label7.TabIndex = 85;
-            this.label7.Text = "Kategori";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(4, 72);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 13);
-            this.label8.TabIndex = 86;
-            this.label8.Text = "Kelompok Barang";
-            // 
-            // cmbGroupItem
-            // 
-            this.cmbGroupItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGroupItem.FormattingEnabled = true;
-            this.cmbGroupItem.Location = new System.Drawing.Point(108, 68);
-            this.cmbGroupItem.Name = "cmbGroupItem";
-            this.cmbGroupItem.Size = new System.Drawing.Size(156, 21);
-            this.cmbGroupItem.TabIndex = 87;
-            // 
-            // cmbCategory
-            // 
-            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(356, 31);
-            this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(156, 21);
-            this.cmbCategory.TabIndex = 88;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(341, 99);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 89;
-            this.button4.Text = "STOCK";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(7, 128);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(723, 296);
-            this.panel1.TabIndex = 90;
             // 
             // ID
             // 
@@ -379,6 +220,166 @@
             this.delete_flag.Name = "delete_flag";
             this.delete_flag.ReadOnly = true;
             this.delete_flag.Visible = false;
+            // 
+            // descriptionTxt
+            // 
+            this.descriptionTxt.Location = new System.Drawing.Point(356, 51);
+            this.descriptionTxt.Name = "descriptionTxt";
+            this.descriptionTxt.Size = new System.Drawing.Size(156, 20);
+            this.descriptionTxt.TabIndex = 77;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(295, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 13);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "Deskripsi";
+            // 
+            // nameTxt
+            // 
+            this.nameTxt.Location = new System.Drawing.Point(108, 30);
+            this.nameTxt.Name = "nameTxt";
+            this.nameTxt.Size = new System.Drawing.Size(156, 20);
+            this.nameTxt.TabIndex = 69;
+            // 
+            // codeTxt
+            // 
+            this.codeTxt.Location = new System.Drawing.Point(108, 11);
+            this.codeTxt.Name = "codeTxt";
+            this.codeTxt.Size = new System.Drawing.Size(156, 20);
+            this.codeTxt.TabIndex = 68;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(4, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(72, 13);
+            this.label2.TabIndex = 67;
+            this.label2.Text = "Nama Barang";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(4, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Kode Barang";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(179, 99);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 74;
+            this.button3.Text = "DELETE";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(98, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 73;
+            this.button2.Text = "EDIT";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // priceTxt
+            // 
+            this.priceTxt.Location = new System.Drawing.Point(108, 49);
+            this.priceTxt.Name = "priceTxt";
+            this.priceTxt.Size = new System.Drawing.Size(156, 20);
+            this.priceTxt.TabIndex = 78;
+            this.priceTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.priceTxt_KeyPress);
+            this.priceTxt.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(4, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 79;
+            this.label3.Text = "Harga Jual";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(295, 15);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 83;
+            this.label6.Text = "Satuan";
+            // 
+            // cmbUnit
+            // 
+            this.cmbUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbUnit.FormattingEnabled = true;
+            this.cmbUnit.Location = new System.Drawing.Point(356, 11);
+            this.cmbUnit.Name = "cmbUnit";
+            this.cmbUnit.Size = new System.Drawing.Size(156, 21);
+            this.cmbUnit.TabIndex = 84;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(295, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 85;
+            this.label7.Text = "Kategori";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(4, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 86;
+            this.label8.Text = "Kelompok Barang";
+            // 
+            // cmbGroupItem
+            // 
+            this.cmbGroupItem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGroupItem.FormattingEnabled = true;
+            this.cmbGroupItem.Location = new System.Drawing.Point(108, 68);
+            this.cmbGroupItem.Name = "cmbGroupItem";
+            this.cmbGroupItem.Size = new System.Drawing.Size(156, 21);
+            this.cmbGroupItem.TabIndex = 87;
+            // 
+            // cmbCategory
+            // 
+            this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCategory.FormattingEnabled = true;
+            this.cmbCategory.Location = new System.Drawing.Point(356, 31);
+            this.cmbCategory.Name = "cmbCategory";
+            this.cmbCategory.Size = new System.Drawing.Size(156, 21);
+            this.cmbCategory.TabIndex = 88;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(341, 99);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 89;
+            this.button4.Text = "STOCK";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Location = new System.Drawing.Point(7, 128);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(723, 296);
+            this.panel1.TabIndex = 90;
             // 
             // Item
             // 

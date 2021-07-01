@@ -61,10 +61,12 @@ namespace inventory
             {
                 conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source= " + db + ";";
                 conn.Open();
+                MessageBox.Show(e.ToString(), "gagal koneksi . . .", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("gagal koneksi = " + e.InnerException.Message);
             }
             catch (Exception e)
             {
+                MessageBox.Show(e.ToString(), "error . . .", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine("error = " + e);
             }
 

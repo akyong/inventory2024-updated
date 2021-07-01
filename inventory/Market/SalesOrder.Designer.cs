@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesOrder));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesOrder));
             this.button4 = new System.Windows.Forms.Button();
             this.nobuktiTxt = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -50,8 +50,6 @@
             this.cmbCustomer = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tanggalTxt = new System.Windows.Forms.DateTimePicker();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbTax = new System.Windows.Forms.ComboBox();
             this.chkTax = new System.Windows.Forms.CheckBox();
@@ -63,26 +61,25 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.nopo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.autoCompleteTextbox1 = new AutoCompleteTextBoxSample.AutoCompleteTextbox();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(336, 89);
+            this.button4.Location = new System.Drawing.Point(336, 122);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 101;
@@ -118,7 +115,7 @@
             // 
             // findBtn
             // 
-            this.findBtn.Location = new System.Drawing.Point(255, 89);
+            this.findBtn.Location = new System.Drawing.Point(255, 122);
             this.findBtn.Name = "findBtn";
             this.findBtn.Size = new System.Drawing.Size(75, 23);
             this.findBtn.TabIndex = 97;
@@ -128,7 +125,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 89);
+            this.button1.Location = new System.Drawing.Point(12, 122);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 94;
@@ -138,7 +135,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(174, 89);
+            this.button3.Location = new System.Drawing.Point(174, 122);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 96;
@@ -148,7 +145,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(93, 89);
+            this.button2.Location = new System.Drawing.Point(93, 122);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 95;
@@ -178,16 +175,17 @@
             // cmbWarehouse
             // 
             this.cmbWarehouse.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbWarehouse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbWarehouse.FormattingEnabled = true;
-            this.cmbWarehouse.Location = new System.Drawing.Point(101, 59);
+            this.cmbWarehouse.Location = new System.Drawing.Point(101, 67);
             this.cmbWarehouse.Name = "cmbWarehouse";
-            this.cmbWarehouse.Size = new System.Drawing.Size(275, 21);
+            this.cmbWarehouse.Size = new System.Drawing.Size(275, 28);
             this.cmbWarehouse.TabIndex = 91;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 63);
+            this.label3.Location = new System.Drawing.Point(12, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 90;
@@ -205,10 +203,11 @@
             // cmbCustomer
             // 
             this.cmbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCustomer.FormattingEnabled = true;
             this.cmbCustomer.Location = new System.Drawing.Point(101, 39);
             this.cmbCustomer.Name = "cmbCustomer";
-            this.cmbCustomer.Size = new System.Drawing.Size(275, 21);
+            this.cmbCustomer.Size = new System.Drawing.Size(275, 28);
             this.cmbCustomer.TabIndex = 88;
             // 
             // label1
@@ -228,25 +227,6 @@
             this.tanggalTxt.Name = "tanggalTxt";
             this.tanggalTxt.Size = new System.Drawing.Size(164, 20);
             this.tanggalTxt.TabIndex = 86;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(12, 495);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 23);
-            this.button5.TabIndex = 102;
-            this.button5.Text = "Terbit Ke DO";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(115, 495);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(97, 23);
-            this.button6.TabIndex = 103;
-            this.button6.Text = "Terbit Ke SI";
-            this.button6.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -281,7 +261,7 @@
             // totalLbl
             // 
             this.totalLbl.AutoSize = true;
-            this.totalLbl.Location = new System.Drawing.Point(514, 474);
+            this.totalLbl.Location = new System.Drawing.Point(724, 474);
             this.totalLbl.Name = "totalLbl";
             this.totalLbl.Size = new System.Drawing.Size(37, 13);
             this.totalLbl.TabIndex = 108;
@@ -290,7 +270,7 @@
             // pajakLbl
             // 
             this.pajakLbl.AutoSize = true;
-            this.pajakLbl.Location = new System.Drawing.Point(511, 488);
+            this.pajakLbl.Location = new System.Drawing.Point(721, 488);
             this.pajakLbl.Name = "pajakLbl";
             this.pajakLbl.Size = new System.Drawing.Size(40, 13);
             this.pajakLbl.TabIndex = 109;
@@ -301,10 +281,11 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(792, 474);
+            this.label9.Location = new System.Drawing.Point(870, 474);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.Size = new System.Drawing.Size(10, 13);
             this.label9.TabIndex = 110;
+            this.label9.Text = ".";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
@@ -312,17 +293,18 @@
             // 
             this.nilaipjklbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.nilaipjklbl.AutoSize = true;
-            this.nilaipjklbl.Location = new System.Drawing.Point(792, 488);
+            this.nilaipjklbl.Location = new System.Drawing.Point(870, 488);
             this.nilaipjklbl.Name = "nilaipjklbl";
-            this.nilaipjklbl.Size = new System.Drawing.Size(0, 13);
+            this.nilaipjklbl.Size = new System.Drawing.Size(10, 13);
             this.nilaipjklbl.TabIndex = 111;
+            this.nilaipjklbl.Text = ".";
             this.nilaipjklbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.nilaipjklbl.Visible = false;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(482, 501);
+            this.label7.Location = new System.Drawing.Point(692, 501);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 13);
             this.label7.TabIndex = 112;
@@ -332,15 +314,16 @@
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(792, 501);
+            this.label8.Location = new System.Drawing.Point(870, 501);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.Size = new System.Drawing.Size(10, 13);
             this.label8.TabIndex = 113;
+            this.label8.Text = ".";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(417, 89);
+            this.button7.Location = new System.Drawing.Point(498, 122);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 23);
             this.button7.TabIndex = 114;
@@ -348,19 +331,9 @@
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(12, 407);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(97, 23);
-            this.button8.TabIndex = 115;
-            this.button8.Text = "HAPUS BARIS";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
             // btncancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(498, 89);
+            this.btncancel.Location = new System.Drawing.Point(417, 122);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(75, 23);
             this.btncancel.TabIndex = 116;
@@ -387,94 +360,6 @@
             this.label10.TabIndex = 174;
             this.label10.Text = "No. PO";
             // 
-            // autoCompleteTextbox1
-            // 
-            this.autoCompleteTextbox1.AutoCompleteList = ((System.Collections.Generic.List<string>)(resources.GetObject("autoCompleteTextbox1.AutoCompleteList")));
-            this.autoCompleteTextbox1.CaseSensitive = false;
-            this.autoCompleteTextbox1.Location = new System.Drawing.Point(274, 409);
-            this.autoCompleteTextbox1.MinTypedCharacters = 2;
-            this.autoCompleteTextbox1.Name = "autoCompleteTextbox1";
-            this.autoCompleteTextbox1.SelectedIndex = -1;
-            this.autoCompleteTextbox1.Size = new System.Drawing.Size(299, 20);
-            this.autoCompleteTextbox1.TabIndex = 176;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "Keterangan";
-            this.description.MaxInputLength = 255;
-            this.description.Name = "description";
-            this.description.Width = 200;
-            // 
-            // subtotal
-            // 
-            this.subtotal.DataPropertyName = "subtotal";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.Format = "N";
-            this.subtotal.DefaultCellStyle = dataGridViewCellStyle1;
-            this.subtotal.HeaderText = "Sub Total";
-            this.subtotal.MaxInputLength = 10;
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            // 
-            // Discount
-            // 
-            this.Discount.DataPropertyName = "discount";
-            dataGridViewCellStyle2.Format = "N";
-            dataGridViewCellStyle2.NullValue = "0.00";
-            this.Discount.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Discount.HeaderText = "Discount";
-            this.Discount.MaxInputLength = 10;
-            this.Discount.Name = "Discount";
-            // 
-            // Price
-            // 
-            this.Price.DataPropertyName = "price";
-            dataGridViewCellStyle3.Format = "N";
-            this.Price.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Price.HeaderText = "Harga";
-            this.Price.MaxInputLength = 10;
-            this.Price.Name = "Price";
-            // 
-            // qty
-            // 
-            this.qty.DataPropertyName = "qty";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N";
-            dataGridViewCellStyle4.NullValue = "0.00";
-            this.qty.DefaultCellStyle = dataGridViewCellStyle4;
-            this.qty.HeaderText = "Qty";
-            this.qty.MaxInputLength = 4;
-            this.qty.Name = "qty";
-            this.qty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.qty.ToolTipText = "Jumlah Barang yang mau diorder";
-            this.qty.Width = 60;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "Nama Barang";
-            this.name.Name = "name";
-            this.name.Width = 250;
-            // 
-            // Item
-            // 
-            this.Item.DataPropertyName = "code";
-            this.Item.HeaderText = "Kode Barang";
-            this.Item.Name = "Item";
-            this.Item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Item.Width = 200;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -487,24 +372,111 @@
             this.subtotal,
             this.description,
             this.id});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 122);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 159);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(850, 279);
+            this.dataGridView1.Size = new System.Drawing.Size(1061, 279);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.TabStop = false;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 444);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 23);
+            this.button5.TabIndex = 176;
+            this.button5.Text = "DO";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // Item
+            // 
+            this.Item.DataPropertyName = "code";
+            this.Item.HeaderText = "Kode Barang";
+            this.Item.Name = "Item";
+            this.Item.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Item.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Item.Width = 150;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "Nama Barang";
+            this.name.Name = "name";
+            this.name.Width = 250;
+            // 
+            // qty
+            // 
+            this.qty.DataPropertyName = "qty";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "N";
+            dataGridViewCellStyle1.NullValue = "0.00";
+            this.qty.DefaultCellStyle = dataGridViewCellStyle1;
+            this.qty.HeaderText = "Qty";
+            this.qty.MaxInputLength = 8;
+            this.qty.Name = "qty";
+            this.qty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.qty.ToolTipText = "Jumlah Barang yang mau diorder";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "price";
+            dataGridViewCellStyle2.Format = "N";
+            this.Price.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Price.HeaderText = "Harga";
+            this.Price.MaxInputLength = 10;
+            this.Price.Name = "Price";
+            // 
+            // Discount
+            // 
+            this.Discount.DataPropertyName = "discount";
+            dataGridViewCellStyle3.Format = "N";
+            dataGridViewCellStyle3.NullValue = "0.00";
+            this.Discount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Discount.HeaderText = "Discount";
+            this.Discount.MaxInputLength = 10;
+            this.Discount.Name = "Discount";
+            this.Discount.Width = 50;
+            // 
+            // subtotal
+            // 
+            this.subtotal.DataPropertyName = "subtotal";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Format = "N";
+            this.subtotal.DefaultCellStyle = dataGridViewCellStyle4;
+            this.subtotal.HeaderText = "Sub Total";
+            this.subtotal.MaxInputLength = 10;
+            this.subtotal.Name = "subtotal";
+            this.subtotal.ReadOnly = true;
+            this.subtotal.Width = 150;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "Keterangan";
+            this.description.MaxInputLength = 255;
+            this.description.Name = "description";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
             // SalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(874, 531);
-            this.Controls.Add(this.autoCompleteTextbox1);
+            this.ClientSize = new System.Drawing.Size(1080, 574);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.nopo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btncancel);
-            this.Controls.Add(this.button8);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.label8);
@@ -516,8 +488,6 @@
             this.Controls.Add(this.chkTax);
             this.Controls.Add(this.cmbTax);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.nobuktiTxt);
             this.Controls.Add(this.label5);
@@ -537,7 +507,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SalesOrder";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sales Order";
+            this.Text = "INVOICE";
             this.Load += new System.EventHandler(this.SalesOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -563,8 +533,6 @@
         private System.Windows.Forms.ComboBox cmbCustomer;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker tanggalTxt;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbTax;
         private System.Windows.Forms.CheckBox chkTax;
@@ -576,19 +544,18 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button btncancel;
         private System.Windows.Forms.TextBox nopo;
         private System.Windows.Forms.Label label10;
-        private AutoCompleteTextBoxSample.AutoCompleteTextbox autoCompleteTextbox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Item;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

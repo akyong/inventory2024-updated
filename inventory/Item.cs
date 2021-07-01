@@ -429,11 +429,12 @@ namespace inventory
                                 Connection.command.CommandType = CommandType.Text;
                                 Connection.command.Parameters.AddWithValue("@code", codeTxt.Text);
                                 Connection.command.Parameters.AddWithValue("@namex", nameTxt.Text);
+                                Connection.command.Parameters.AddWithValue("@description", descriptionTxt.Text);
                                 Connection.command.Parameters.AddWithValue("@price", priceTxt.Text);
                                 Connection.command.Parameters.AddWithValue("@unit", cmbUnit.SelectedValue.ToString());
                                 Connection.command.Parameters.AddWithValue("@category", cmbCategory.SelectedValue.ToString());
                                 Connection.command.Parameters.AddWithValue("@groupitem", cmbGroupItem.SelectedValue.ToString());
-                                Connection.command.Parameters.AddWithValue("@description", descriptionTxt.Text);
+                                
                                 Connection.command.Parameters.AddWithValue("@id", id);
 
                                 Console.WriteLine("code.Text = " + codeTxt.Text);
@@ -596,6 +597,11 @@ namespace inventory
 
                 idgudang.Text = "ID";
             }
+        }
+
+        private void priceTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }

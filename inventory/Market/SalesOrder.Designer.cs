@@ -65,7 +65,6 @@
             this.nopo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
             this.Item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +73,7 @@
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -381,16 +381,6 @@
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(12, 444);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 23);
-            this.button5.TabIndex = 176;
-            this.button5.Text = "DO";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
             // Item
             // 
             this.Item.DataPropertyName = "code";
@@ -467,6 +457,16 @@
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(12, 444);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(97, 23);
+            this.button5.TabIndex = 176;
+            this.button5.Text = "Sales Order";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // SalesOrder
             // 

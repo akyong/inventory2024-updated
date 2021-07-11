@@ -1641,7 +1641,7 @@ namespace inventory.Market
             DialogResult dialogResult = MessageBox.Show("Apakah anda yakin akan menghapus Sales Order ini?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
-                string queryCekDulu = "SELECT * FROM INVOICE WHERE ID=@id ";
+                /*string queryCekDulu = "SELECT * FROM INVOICE WHERE ID=@id ";
                 Connection.command = new OleDbCommand(queryCekDulu, Connection.conn);
                 Connection.command.CommandType = CommandType.Text;
                 Connection.command.Parameters.AddWithValue("@id", idsalesorder.Text);
@@ -1659,7 +1659,7 @@ namespace inventory.Market
                     MessageBox.Show("Sales Order tidak bisa dihapus, karena sudah diterbitkan!", "Delete Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                {
+                {*/
                     string queryHapusDetail = "DELETE FROM INVOICE_DETAIL WHERE INVOICE_ID=@id ";
                     string queryHapusHead = "DELETE FROM INVOICE WHERE ID=@id ";
                     Connection.command = new OleDbCommand(queryHapusDetail, Connection.conn);
@@ -1673,7 +1673,7 @@ namespace inventory.Market
                     Connection.command.ExecuteNonQuery();
 
                     MessageBox.Show("Bukti Sales Invoice Berhasil dihapus ", "Delete Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }               
+                /*}*/               
             }
             else if (dialogResult == DialogResult.No)
             {

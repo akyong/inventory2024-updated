@@ -162,4 +162,3 @@ D:\inventory\inventory\obj\Release\inventory.application
 D:\inventory\inventory\obj\Release\inventory.csproj.CopyComplete
 D:\inventory\inventory\obj\Release\inventory.exe
 D:\inventory\inventory\obj\Release\inventory.pdb
-D:\inventory\inventory\obj\Release\inventory.csprojAssemblyReference.cache

@@ -18,8 +18,9 @@ namespace inventory.reporting
         string idinvoice;
         public ReportViewerSalesInvoice(string invoiceid)
         {
-            idinvoice = invoiceid;
+            
             InitializeComponent();
+            idinvoice = invoiceid;
         }
 
         private void ReportViewerSalesInvoice_Load(object sender, EventArgs e)
@@ -33,11 +34,12 @@ namespace inventory.reporting
             TableLogOnInfos crtableLogoninfos = new TableLogOnInfos();
             TableLogOnInfo crtableLogoninfo = new TableLogOnInfo();
             ConnectionInfo crConnectionInfo = new ConnectionInfo();
-
-            //Console.WriteLine("filePath = " + filePath);
+            Console.WriteLine("id ivnoice + " + idinvoice);
+            Console.WriteLine("filePath = " + filePath);
             reportDoc.PrintOptions.PaperSize = (CrystalDecisions.Shared.PaperSize)System.Drawing.Printing.PaperKind.A5Rotated;
             reportDoc.Load(filePath);
             reportDoc.SetParameterValue("idinvoice", idinvoice);
+
 
 
 

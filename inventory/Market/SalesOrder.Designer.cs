@@ -73,8 +73,12 @@
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button5 = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.persenTxt = new System.Windows.Forms.NumericUpDown();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.persenTxt)).BeginInit();
             this.SuspendLayout();
             // 
             // button4
@@ -356,9 +360,10 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(394, 72);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(42, 13);
+            this.label10.Size = new System.Drawing.Size(62, 13);
             this.label10.TabIndex = 174;
-            this.label10.Text = "No. PO";
+            this.label10.Text = "No. Manual";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // dataGridView1
             // 
@@ -410,6 +415,7 @@
             this.qty.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.qty.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.qty.ToolTipText = "Jumlah Barang yang mau diorder";
+            this.qty.Width = 80;
             // 
             // Price
             // 
@@ -450,6 +456,7 @@
             this.description.HeaderText = "Keterangan";
             this.description.MaxInputLength = 255;
             this.description.Name = "description";
+            this.description.Width = 200;
             // 
             // id
             // 
@@ -457,23 +464,65 @@
             this.id.HeaderText = "id";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Width = 20;
             // 
-            // button5
+            // label11
             // 
-            this.button5.Location = new System.Drawing.Point(12, 444);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(97, 23);
-            this.button5.TabIndex = 176;
-            this.button5.Text = "Sales Order";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(20, 464);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(74, 16);
+            this.label11.TabIndex = 176;
+            this.label11.Text = "Discount ";
+            // 
+            // persenTxt
+            // 
+            this.persenTxt.Enabled = false;
+            this.persenTxt.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.persenTxt.Location = new System.Drawing.Point(100, 463);
+            this.persenTxt.Name = "persenTxt";
+            this.persenTxt.Size = new System.Drawing.Size(82, 20);
+            this.persenTxt.TabIndex = 177;
+            this.persenTxt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.persenTxt.ValueChanged += new System.EventHandler(this.persenTxt_ValueChanged);
+            this.persenTxt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.persenTxt_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(182, 464);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(25, 19);
+            this.label12.TabIndex = 178;
+            this.label12.Text = "%";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 8.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(20, 488);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(317, 13);
+            this.label13.TabIndex = 179;
+            this.label13.Text = "Info: Satuan pemisah desimal adalah Koma (,) buak titik";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // SalesOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 574);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.persenTxt);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.nopo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btncancel);
@@ -510,6 +559,7 @@
             this.Text = "INVOICE";
             this.Load += new System.EventHandler(this.SalesOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.persenTxt)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -548,7 +598,6 @@
         private System.Windows.Forms.TextBox nopo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Item;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
@@ -557,5 +606,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown persenTxt;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

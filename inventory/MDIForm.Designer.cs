@@ -60,6 +60,7 @@
             this.penjualanToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pembelianToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cekHistoryItemPembelianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.contentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.indexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -239,7 +240,7 @@
             // 
             this.salesOrderToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("salesOrderToolStripMenuItem.Image")));
             this.salesOrderToolStripMenuItem.Name = "salesOrderToolStripMenuItem";
-            this.salesOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.salesOrderToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.salesOrderToolStripMenuItem.Text = "INVOICE";
             this.salesOrderToolStripMenuItem.Click += new System.EventHandler(this.salesOrderToolStripMenuItem_Click);
             // 
@@ -249,7 +250,7 @@
             this.customerToolStripMenuItem,
             this.kelompokCustomerToolStripMenuItem});
             this.persiapanToolStripMenuItem2.Name = "persiapanToolStripMenuItem2";
-            this.persiapanToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.persiapanToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
             this.persiapanToolStripMenuItem2.Text = "Persiapan";
             // 
             // customerToolStripMenuItem
@@ -341,7 +342,8 @@
             this.laporanToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.penjualanToolStripMenuItem1,
             this.pembelianToolStripMenuItem1,
-            this.stockToolStripMenuItem1});
+            this.stockToolStripMenuItem1,
+            this.cekHistoryItemPembelianToolStripMenuItem});
             this.laporanToolStripMenuItem.Name = "laporanToolStripMenuItem";
             this.laporanToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.laporanToolStripMenuItem.Text = "Laporan";
@@ -349,22 +351,29 @@
             // penjualanToolStripMenuItem1
             // 
             this.penjualanToolStripMenuItem1.Name = "penjualanToolStripMenuItem1";
-            this.penjualanToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.penjualanToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
             this.penjualanToolStripMenuItem1.Text = "Penjualan";
             this.penjualanToolStripMenuItem1.Click += new System.EventHandler(this.penjualanToolStripMenuItem1_Click);
             // 
             // pembelianToolStripMenuItem1
             // 
             this.pembelianToolStripMenuItem1.Name = "pembelianToolStripMenuItem1";
-            this.pembelianToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.pembelianToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
             this.pembelianToolStripMenuItem1.Text = "Pembelian";
             this.pembelianToolStripMenuItem1.Click += new System.EventHandler(this.pembelianToolStripMenuItem1_Click);
             // 
             // stockToolStripMenuItem1
             // 
             this.stockToolStripMenuItem1.Name = "stockToolStripMenuItem1";
-            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.stockToolStripMenuItem1.Size = new System.Drawing.Size(221, 22);
             this.stockToolStripMenuItem1.Text = "Stock";
+            // 
+            // cekHistoryItemPembelianToolStripMenuItem
+            // 
+            this.cekHistoryItemPembelianToolStripMenuItem.Name = "cekHistoryItemPembelianToolStripMenuItem";
+            this.cekHistoryItemPembelianToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.cekHistoryItemPembelianToolStripMenuItem.Text = "Cek History Item Pembelian";
+            this.cekHistoryItemPembelianToolStripMenuItem.Click += new System.EventHandler(this.cekHistoryItemPembelianToolStripMenuItem_Click);
             // 
             // helpMenu
             // 
@@ -820,6 +829,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripMenuItem cekHistoryItemPembelianToolStripMenuItem;
     }
 }
 

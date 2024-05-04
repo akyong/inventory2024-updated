@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="INVENTORY_BARUDataSet1" targetNamespace="http://tempuri.org/INVENTORY_BARUDataSet1.xsd" xmlns:mstns="http://tempuri.org/INVENTORY_BARUDataSet1.xsd" xmlns="http://tempuri.org/INVENTORY_BARUDataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="INVENTORY_BARUConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="INVENTORY_BARUConnectionString (Settings)" PropertyReference="ApplicationSettings.inventory.Properties.Settings.GlobalReference.Default.INVENTORY_BARUConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="invoice QueryTableAdapter" GeneratorDataComponentClassName="invoice_QueryTableAdapter" Name="invoice Query" UserDataComponentName="invoice QueryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="INVENTORY_BARUConnectionString (Settings)" DbObjectName="invoice Query" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, invoice_no, invoice_date, customer_id, warehouse_id, pajak_id, description, delete_flag, totalAmount, payment, do_number, return_si_id, nopo, po_number FROM [invoice Query]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="invoice_no" DataSetColumn="invoice_no" />
+              <Mapping SourceColumn="invoice_date" DataSetColumn="invoice_date" />
+              <Mapping SourceColumn="customer_id" DataSetColumn="customer_id" />
+              <Mapping SourceColumn="warehouse_id" DataSetColumn="warehouse_id" />
+              <Mapping SourceColumn="pajak_id" DataSetColumn="pajak_id" />
+              <Mapping SourceColumn="description" DataSetColumn="description" />
+              <Mapping SourceColumn="delete_flag" DataSetColumn="delete_flag" />
+              <Mapping SourceColumn="totalAmount" DataSetColumn="totalAmount" />
+              <Mapping SourceColumn="payment" DataSetColumn="payment" />
+              <Mapping SourceColumn="do_number" DataSetColumn="do_number" />
+              <Mapping SourceColumn="return_si_id" DataSetColumn="return_si_id" />
+              <Mapping SourceColumn="nopo" DataSetColumn="nopo" />
+              <Mapping SourceColumn="po_number" DataSetColumn="po_number" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="INVENTORY_BARUDataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="INVENTORY_BARUDataSet1" msprop:Generator_UserDSName="INVENTORY_BARUDataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="invoice_x0020_Query" msprop:Generator_TableClassName="invoice_QueryDataTable" msprop:Generator_TableVarName="tableinvoice_Query" msprop:Generator_TablePropName="invoice_Query" msprop:Generator_RowDeletingName="invoice_QueryRowDeleting" msprop:Generator_RowChangingName="invoice_QueryRowChanging" msprop:Generator_RowEvHandlerName="invoice_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="invoice_QueryRowDeleted" msprop:Generator_UserTableName="invoice Query" msprop:Generator_RowChangedName="invoice_QueryRowChanged" msprop:Generator_RowEvArgName="invoice_QueryRowChangeEvent" msprop:Generator_RowClassName="invoice_QueryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="invoice_no" msprop:Generator_ColumnVarNameInTable="columninvoice_no" msprop:Generator_ColumnPropNameInRow="invoice_no" msprop:Generator_ColumnPropNameInTable="invoice_noColumn" msprop:Generator_UserColumnName="invoice_no" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="invoice_date" msprop:Generator_ColumnVarNameInTable="columninvoice_date" msprop:Generator_ColumnPropNameInRow="invoice_date" msprop:Generator_ColumnPropNameInTable="invoice_dateColumn" msprop:Generator_UserColumnName="invoice_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="customer_id" msprop:Generator_ColumnVarNameInTable="columncustomer_id" msprop:Generator_ColumnPropNameInRow="customer_id" msprop:Generator_ColumnPropNameInTable="customer_idColumn" msprop:Generator_UserColumnName="customer_id" type="xs:int" minOccurs="0" />
+              <xs:element name="warehouse_id" msprop:Generator_ColumnVarNameInTable="columnwarehouse_id" msprop:Generator_ColumnPropNameInRow="warehouse_id" msprop:Generator_ColumnPropNameInTable="warehouse_idColumn" msprop:Generator_UserColumnName="warehouse_id" type="xs:int" minOccurs="0" />
+              <xs:element name="pajak_id" msprop:Generator_ColumnVarNameInTable="columnpajak_id" msprop:Generator_ColumnPropNameInRow="pajak_id" msprop:Generator_ColumnPropNameInTable="pajak_idColumn" msprop:Generator_UserColumnName="pajak_id" type="xs:int" minOccurs="0" />
+              <xs:element name="description" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_UserColumnName="description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="delete_flag" msprop:Generator_ColumnVarNameInTable="columndelete_flag" msprop:Generator_ColumnPropNameInRow="delete_flag" msprop:Generator_ColumnPropNameInTable="delete_flagColumn" msprop:Generator_UserColumnName="delete_flag" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="totalAmount" msprop:Generator_ColumnVarNameInTable="columntotalAmount" msprop:Generator_ColumnPropNameInRow="totalAmount" msprop:Generator_ColumnPropNameInTable="totalAmountColumn" msprop:Generator_UserColumnName="totalAmount" type="xs:int" minOccurs="0" />
+              <xs:element name="payment" msprop:Generator_ColumnVarNameInTable="columnpayment" msprop:Generator_ColumnPropNameInRow="payment" msprop:Generator_ColumnPropNameInTable="paymentColumn" msprop:Generator_UserColumnName="payment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="do_number" msprop:Generator_ColumnVarNameInTable="columndo_number" msprop:Generator_ColumnPropNameInRow="do_number" msprop:Generator_ColumnPropNameInTable="do_numberColumn" msprop:Generator_UserColumnName="do_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="return_si_id" msprop:Generator_ColumnVarNameInTable="columnreturn_si_id" msprop:Generator_ColumnPropNameInRow="return_si_id" msprop:Generator_ColumnPropNameInTable="return_si_idColumn" msprop:Generator_UserColumnName="return_si_id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nopo" msprop:Generator_ColumnVarNameInTable="columnnopo" msprop:Generator_ColumnPropNameInRow="nopo" msprop:Generator_ColumnPropNameInTable="nopoColumn" msprop:Generator_UserColumnName="nopo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="po_number" msprop:Generator_ColumnVarNameInTable="columnpo_number" msprop:Generator_ColumnPropNameInRow="po_number" msprop:Generator_ColumnPropNameInTable="po_numberColumn" msprop:Generator_UserColumnName="po_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:invoice_x0020_Query" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

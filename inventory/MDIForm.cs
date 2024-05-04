@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using inventory.reporting;
 
 namespace inventory
 {
@@ -679,6 +680,22 @@ namespace inventory
         private void toolStripStatusLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cekHistoryItemPembelianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(history))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            history so = new history(this);
+            so.MdiParent = this;
+            so.Show();
         }
     }
 }

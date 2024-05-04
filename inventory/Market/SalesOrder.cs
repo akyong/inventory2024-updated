@@ -27,6 +27,8 @@ namespace inventory.Market
         {
             InitializeComponent();
             mdi = mdinya;
+            persenTxt.DecimalPlaces = 2;
+            persenTxt.Increment = 0.01m;
             loadComboBox();
             //dataGridView1.Columns[1].DefaultCellStyle.Format = "N";//dari propertis juga bisa
             dataGridView1.Columns[2].DefaultCellStyle.Format = "N";//dari propertis juga bisa
@@ -47,12 +49,14 @@ namespace inventory.Market
                 dataGridView1.Enabled = true;
                 btncancel.Visible = true;
                 btncancel.Enabled = true;
+                persenTxt.Enabled = true;
 
                 button2.Text = "UPDATE";
                 button1.Enabled = false;
                 button3.Enabled = false;
                 findBtn.Enabled = false;
-                nopo.Enabled = true;
+                nopo.Enabled = false;
+                persenTxt.Enabled = true;
 
             }
             else if (button2.Text == "UPDATE")
@@ -242,7 +246,7 @@ namespace inventory.Market
                                     //string valueDisc = dataGridView1.Rows[rows].Cells[3].Value != null ? dataGridView1.Rows[rows].Cells[3].Value.ToString() : "0";
                                    
                                     //Double valuesubtotal = Double.Parse(valueSubtotal);
-                                    Double subtotalnya = (qtynya * harganya) - discountnya;
+                                    Double subtotalnya = qtynya * (harganya - discountnya);
                                     totalAmount = totalAmount + subtotalnya;
 
                                     string valueDesc = "";
@@ -277,7 +281,10 @@ namespace inventory.Market
 
                                 }
 
-                                string query = "UPDATE INVOICE SET invoice_no=@invoiceno, invoice_date=@invoicedate,warehouse_id=@warehouse,customer_id=@customer,pajak_id=@pajak, description=@description,totalAmount=@totalAmount,po_number=@ponumber WHERE id=@id";
+                                Console.WriteLine("(double)persenTxt.Value   == " + (double)persenTxt.Value);
+                                Console.WriteLine("sebelum dikurang diskon total == " + totalAmount);
+                                totalAmount = totalAmount - (((double)persenTxt.Value / 100) * totalAmount);
+                                string query = "UPDATE INVOICE SET invoice_no=@invoiceno, invoice_date=@invoicedate,warehouse_id=@warehouse,customer_id=@customer,pajak_id=@pajak, description=@description,totalAmount=@totalAmount,po_number=@ponumber, discountTot='"+ persenTxt.Value + "' WHERE id=@id";
                                 Connection.command = new OleDbCommand(query, Connection.conn);
                                 Connection.command.CommandType = CommandType.Text;
                                 Connection.command.Parameters.AddWithValue("@invoiceno", nobuktiTxt.Text);
@@ -292,7 +299,7 @@ namespace inventory.Market
                                 {
                                     Connection.command.Parameters.AddWithValue("@pajak", DBNull.Value);
                                 }
-
+                                Console.WriteLine("totallll == " + totalAmount);
                                 Connection.command.Parameters.AddWithValue("@description", descriptionTxt.Text);
                                 Connection.command.Parameters.AddWithValue("@totalAmount", totalAmount);
                                 Connection.command.Parameters.AddWithValue("@ponumber", nopo.Text);
@@ -311,7 +318,7 @@ namespace inventory.Market
 
                         update_sub_label(idsalesorder.Text);
 
-                        string queryAmbilSetelahInsert = "SELECT I.CODE AS CODE,I.NAME AS NAME,SO.QTY AS QTY,SO.PRICE AS PRICE, SO.DISCOUNT, (SO.QTY * SO.PRICE - SO.DISCOUNT) AS SUBTOTAL,SO.DESCRIPTION AS DESCRIPTION,SO.ITEM_ID AS ID FROM INVOICE_DETAIL SO INNER JOIN ITEM I ON SO.ITEM_ID = I.ID WHERE SO.INVOICE_ID=" + idsalesorder.Text;
+                        string queryAmbilSetelahInsert = "SELECT I.CODE AS CODE,I.NAME AS NAME,SO.QTY AS QTY,SO.PRICE AS PRICE, SO.DISCOUNT, (SO.QTY * (SO.PRICE - SO.DISCOUNT)) AS SUBTOTAL,SO.DESCRIPTION AS DESCRIPTION,SO.ITEM_ID AS ID FROM INVOICE_DETAIL SO INNER JOIN ITEM I ON SO.ITEM_ID = I.ID WHERE SO.INVOICE_ID=" + idsalesorder.Text;
 
 
                         OleDbCommand cmd = new OleDbCommand(queryAmbilSetelahInsert, Connection.conn);
@@ -335,6 +342,7 @@ namespace inventory.Market
                         button3.Enabled = true;
                         findBtn.Enabled = true;
                         nopo.Enabled = false;
+                        persenTxt.Enabled = false;
                     }
                 }
             }
@@ -353,6 +361,9 @@ namespace inventory.Market
             dataGridView1.Enabled = false;
             btncancel.Visible = false;
             btncancel.Enabled = false;
+            nopo.Enabled = false;
+            persenTxt.Enabled = false;
+            persenTxt.Increment = 0.01m;
            /* nopo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             nopo.AutoCompleteSource = AutoCompleteSource.CustomSource;
             nopo.Enabled = false;*/
@@ -374,26 +385,7 @@ namespace inventory.Market
             Connection.ConnectionClose();
             Connection.ConnectionOpen();
 
-         /*   //TODO fill Customer list
-            string queryPi = "SELECT * FROM INVOICE";
-
-            Connection.command = new OleDbCommand(queryPi, Connection.conn);
-            Connection.command.CommandType = CommandType.Text;
-           
-            reader = Connection.command.ExecuteReader();
-
-            if (reader.HasRows == true)
-            {
-                while (reader.Read())
-                {
-                    picode.Add(reader["nopo"].ToString());
-                }
-            }
-            else
-            {
-                MessageBox.Show("Data not Found");
-            }*/
-            //---------------------------------
+      
             string gkey = "";
             var source = new List<string>();
             Connection.ConnectionClose();
@@ -494,7 +486,8 @@ namespace inventory.Market
                 btncancel.Visible = true;
                 btncancel.Enabled = true;
                 nopo.Enabled = true;
-
+                persenTxt.Enabled = true;
+                persenTxt.Value = 0;
 
                 loadComboBox();
 
@@ -515,16 +508,23 @@ namespace inventory.Market
 
 
                 int rowCount = dataGridView1.Rows.Count - 1;
+                Console.WriteLine(" int rowCount "+ rowCount);
+                if (rowCount == 0) {
+                    MessageBox.Show("ISI BARANG!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
                 foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.Index < rowCount)
                     {
-                        Console.WriteLine(row.Index);
                         try
                         {                         
                             var valueItem = row.Cells["id"].Value;
                             var valueQty = row.Cells["qty"].Value;
                             var valueHarga = row.Cells["price"].Value;
+                            var valueDiscount = row.Cells["discount"].Value;
+
 
                             if (valueItem == null || valueQty == null || valueHarga == null) {
                                 MessageBox.Show("INFORMASI BARANGHARUS DI ISI!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -533,13 +533,23 @@ namespace inventory.Market
 
                             Double qtynya = Double.Parse(valueQty.ToString());
                             Double harganya = Double.Parse(valueHarga.ToString());
-                            Double disc = 0;
+                            double disc = 0;
+                            try
+                            {
+                                if (valueDiscount != null)
+                                {
+                                    disc = double.Parse(valueDiscount.ToString());
+                                }
+                            }
+                            catch (Exception)
+                            {
+                                disc = 0;
+                            }
 
-                            Console.WriteLine("value item = " + valueItem);
-                            Console.WriteLine("value harganya = " + harganya);
 
 
-                            Double subtotalnya = (qtynya * harganya) - disc;
+
+                            Double subtotalnya = qtynya * (harganya - disc);
                             totalAmount = totalAmount + subtotalnya;
                             if (valueItem == null || valueItem == "0")//kalau dropdown item
                             {
@@ -626,14 +636,21 @@ namespace inventory.Market
                     {
                         try
                         {
+                            Connection.ConnectionClose();
+                            Connection.ConnectionOpen();
                             int id;
-                            string queryInsert = "INSERT INTO INVOICE(invoice_no,invoice_date,customer_id,warehouse_id,pajak_id,description,totalAmount,delete_flag,payment) "
-                                            + " VALUES( @invoiceno,@invoicedate,@customer,@warehouse,@pajak,@description,@totalamount,'N','N' )";
-                            Connection.command = new OleDbCommand(queryInsert, Connection.conn);
-                            Connection.command = new OleDbCommand(queryInsert, Connection.conn);
+                            totalAmount = totalAmount -  (((double)persenTxt.Value/100)*totalAmount);
+                            string assadf = "INSERT INTO INVOICE(invoice_no,invoice_date,customer_id,warehouse_id,pajak_id,description,totalAmount,delete_flag,payment,nopo,do_number,discountTot) VALUES(@invoiceno,@invoicedate,@customer,@warehouse,NULL,'"+ descriptionTxt.Text+"','"+ totalAmount+ "' ,'N','N','"+nopo.Text+"',NULL, '"+persenTxt.Value+"')";
+                           /* string queryInsert = "INSERT INTO INVOICE(invoice_no,invoice_date,customer_id,warehouse_id,pajak_id,description,totalAmount,delete_flag,payment,nopo) VALUES('" + nobukti + "','" + tanggalTxt.Value + "','" + cmbCustomer.SelectedValue + "','" + cmbWarehouse.SelectedValue + "'," +
+                                            "'','" + descriptionTxt.Text + "'," + totalAmount + ",'N','N','" + nopo.Text + "')";*/
+
+                            Connection.command = new OleDbCommand(assadf, Connection.conn);
+
                             Connection.command.CommandType = CommandType.Text;
+
                             Connection.command.Parameters.AddWithValue("@invoiceno", nobukti);
-                            Connection.command.Parameters.Add("@invoicedate", OleDbType.Date).Value = tanggalTxt.Value;
+                            Console.WriteLine("tanggal == " + tanggalTxt.Value);
+                            Connection.command.Parameters.Add("@invoicedate", OleDbType.Date).Value = tanggalTxt.Text;
                             Connection.command.Parameters.AddWithValue("@customer", cmbCustomer.SelectedValue);
                             Connection.command.Parameters.AddWithValue("@warehouse", cmbWarehouse.SelectedValue);
                             if (chkTax.Checked == true)
@@ -645,10 +662,14 @@ namespace inventory.Market
                                 Connection.command.Parameters.AddWithValue("@pajak", DBNull.Value);
                             }
 
-                            Connection.command.Parameters.AddWithValue("@description", descriptionTxt.Text);
-                            Connection.command.Parameters.AddWithValue("@totalAmount", totalAmount);
+                            //Connection.command.Parameters.AddWithValue("@deskripsi", descriptionTxt.Text);
+                            //Connection.command.Parameters.AddWithValue("@nopo", nopo.Text);
+                            //Connection.command.Parameters.AddWithValue("@totalamount", totalAmount);
+
+                            Console.WriteLine("Query yang akan dieksekusi: " + totalAmount);
                             Connection.command.ExecuteNonQuery();
-                            
+
+
                             Connection.command.CommandText = "Select @@Identity";
                             id = (int)Connection.command.ExecuteScalar();
                             idsalesorder.Text = id.ToString();
@@ -684,37 +705,21 @@ namespace inventory.Market
                                     string valueItem = dataGridView1.Rows[rows].Cells[7].Value.ToString();
                                     string valueQty = dataGridView1.Rows[rows].Cells[2].Value.ToString();
                                     string valueHarga = dataGridView1.Rows[rows].Cells[3].Value.ToString();
-                                    
+
+
                                     //string valueDisc = dataGridView1.Rows[rows].Cells[3].Value.ToString();
                                     string valueDisc = dataGridView1.Rows[rows].Cells[4].Value != null ? dataGridView1.Rows[rows].Cells[4].Value.ToString() : "0";
+                                    // Jika nilai adalah string kosong atau null, ubah nilai menjadi "0"
+                                    if (string.IsNullOrEmpty(valueDisc))
+                                    {
+                                        valueDisc = "0";
+                                    }
+
                                     Double qtynya = Double.Parse(valueQty);
                                     Double harganya = Double.Parse(valueHarga);
+                                    Double discountnya = Double.Parse(valueDisc);
 
-                                    Double discountnya = 0;
 
-                                   /* try
-                                    {
-                                        if (!String.IsNullOrEmpty(dataGridView1.Rows[rows].Cells[4].Value.ToString()))//Qty
-                                        {
-                                            double value;
-                                            if (Double.TryParse(dataGridView1.Rows[rows].Cells[4].Value.ToString(), out value))
-                                            {
-                                                discountnya = value;
-                                            }
-                                            else
-                                            {
-                                                discountnya = 0; // discount will have null value
-                                            }
-
-                                        }
-                                    }
-                                    catch (Exception ex)
-                                    {
-                                        discountnya = 0;
-                                    }
-*/
-
-                                                                    
                                     string valueDesc = "";
                                     try
                                     {
@@ -727,7 +732,7 @@ namespace inventory.Market
                                     {
                                         valueDesc = "";
                                     }
-                                    
+
 
                                     try
                                     {
@@ -741,7 +746,7 @@ namespace inventory.Market
                                         Connection.command.Parameters.AddWithValue("@price", harganya);
                                         Connection.command.Parameters.AddWithValue("@discount", discountnya);
                                         Connection.command.Parameters.AddWithValue("@description", valueDesc);
-                                        Connection.command.ExecuteNonQuery();     
+                                        Connection.command.ExecuteNonQuery();
                                     }
                                     catch (SqlException ex)
                                     {
@@ -750,7 +755,7 @@ namespace inventory.Market
                                     catch (Exception ex)
                                     {
                                         Console.WriteLine("SQL exx == " + ex);
-                                    }                        
+                                    }
 
                                 }
 
@@ -769,20 +774,34 @@ namespace inventory.Market
                         }
                         catch (SqlException ex)
                         {
-                            MessageBox.Show("there was an issue!" + ex);
+                            MessageBox.Show("there was an issue! 2222" + ex);
                         }
-                        catch (Exception ex)
+                        catch (OleDbException ex)
                         {
-                            MessageBox.Show("there was another issue!");
-                            Console.WriteLine("ex = " + ex);
+                           
+                            //Console.WriteLine("Kesalahan saat menjalankan query: " + ex.Message);
+
+                            // Menampilkan jejak tumpukan untuk mengetahui di mana kesalahan terjadi
+                            //Console.WriteLine("Jejak tumpukan: " + ex.StackTrace);
+
+                             // Menampilkan pesan kesalahan
+                           // Console.WriteLine("Kesalahan saat menjalankan query: " + ex.Message);
+
+                            // Mencetak query string dengan nilai-nilai parameter yang diganti
+                            string queryWithParameters = Connection.command.CommandText;
+                            foreach (OleDbParameter parameter in Connection.command.Parameters)
+                            {
+                                queryWithParameters = queryWithParameters.Replace(parameter.ParameterName, parameter.Value.ToString());
+                            }
+                            //Console.WriteLine("Query yang dieksekusi: " + queryWithParameters);
                         }
 
                         update_sub_label(idsalesorder.Text);
 
-                        string queryAmbilSetelahInsert = "SELECT I.CODE AS CODE,I.NAME AS NAME,SO.QTY AS QTY,SO.PRICE AS PRICE, SO.DISCOUNT, (SO.QTY * SO.PRICE - SO.DISCOUNT) AS SUBTOTAL,SO.DESCRIPTION AS DESCRIPTION,SO.ITEM_ID AS ID FROM INVOICE_DETAIL SO INNER JOIN ITEM I ON SO.ITEM_ID = I.ID WHERE SO.INVOICE_ID=" + idsalesorder.Text;
+                        string queryAmbilSetelahInsert = "SELECT I.CODE AS CODE,I.NAME AS NAME,SO.QTY AS QTY,SO.PRICE AS PRICE, SO.DISCOUNT, (SO.QTY * (SO.PRICE - SO.DISCOUNT)) AS SUBTOTAL,SO.DESCRIPTION AS DESCRIPTION,SO.ITEM_ID AS ID FROM INVOICE_DETAIL SO INNER JOIN ITEM I ON SO.ITEM_ID = I.ID WHERE SO.INVOICE_ID=" + idsalesorder.Text;
 
-                        /*string queryAmbilSetelahInsert = "SELECT SO.ITEM_ID AS ITEM, SO.QTY AS QTY,SO.PRICE AS PRICE, SO.DISCOUNT ,SO.DESCRIPTION AS DESCRIPTION, (SO.QTY * SO.PRICE - SO.DISCOUNT) AS SUBTOTAL FROM INVOICE_DETAIL SO WHERE SO.INVOICE_ID=" + idsalesorder.Text;
-*/
+                        //string queryAmbilSetelahInsert = "SELECT SO.ITEM_ID AS ITEM, SO.QTY AS QTY,SO.PRICE AS PRICE, SO.DISCOUNT ,SO.DESCRIPTION AS DESCRIPTION, (SO.QTY * SO.PRICE - SO.DISCOUNT) AS SUBTOTAL FROM INVOICE_DETAIL SO WHERE SO.INVOICE_ID=" + idsalesorder.Text;
+
                         OleDbCommand cmd = new OleDbCommand(queryAmbilSetelahInsert, Connection.conn);
                         OleDbDataAdapter da = new OleDbDataAdapter(cmd);
                         DataTable scores = new DataTable();
@@ -803,12 +822,14 @@ namespace inventory.Market
 
 
                         button1.Text = "ADD";
+                        
                         button2.Enabled = true;
                         button3.Enabled = true;
                         button4.Enabled = true;
                         button7.Enabled = true;
                         findBtn.Enabled = true;
                         nopo.Enabled = false;
+                        persenTxt.Enabled = false;
                         Connection.ConnectionClose();
 
 
@@ -953,8 +974,8 @@ namespace inventory.Market
             string idx = "";
             try
             {
-                Console.WriteLine("currentRow = " + currentRow);
-                Console.WriteLine("dataGridView1.Rows[currentRow].Cells[1].Value.ToString() = " + dataGridView1.Rows[currentRow].Cells[1].Value.ToString());
+                //Console.WriteLine("currentRow = " + currentRow);
+                //Console.WriteLine("dataGridView1.Rows[currentRow].Cells[1].Value.ToString() = " + dataGridView1.Rows[currentRow].Cells[1].Value.ToString());
                 if (!String.IsNullOrWhiteSpace(dataGridView1.Rows[currentRow].Cells[1].Value.ToString()))//kode
                 {
                     Connection.ConnectionClose();
@@ -983,8 +1004,8 @@ namespace inventory.Market
                         Connection.command.Parameters.AddWithValue("@KODELK", dataGridView1.Rows[currentRow].Cells[0].Value.ToString());
                     }
 
-                   
-                    Console.WriteLine("name d = " + dataGridView1.Rows[currentRow].Cells[1].Value.ToString());
+
+                    //Console.WriteLine("name d = " + dataGridView1.Rows[currentRow].Cells[1].Value.ToString());
                     reader = Connection.command.ExecuteReader();
                     if (reader.HasRows == true)
                     {
@@ -1015,10 +1036,10 @@ namespace inventory.Market
             catch (Exception ex)
             {
                 dataGridView1[0, currentRow].Value ="a";
-                Console.WriteLine("ex = "+ex);
+                //Console.WriteLine("ex = "+ex);
             }
             reader.Close();
-            Console.WriteLine("idx = " + idx);
+            // Console.WriteLine("idx = " + idx);
             auto_complete_harga(idx, currentRow);
         }
         void cb_IndexChanged(object sender, EventArgs e)
@@ -1031,7 +1052,7 @@ namespace inventory.Market
             if (currentCell == 0) {
                 try
                 {
-                    Console.WriteLine("current row cb i= " + currentRow);
+                    //Console.WriteLine("current row cb i= " + currentRow);
 
                     if (dataGridView1.Rows[currentRow].Cells[0].Value == null || dataGridView1.Rows[currentRow].Cells[0].Value == DBNull.Value || String.IsNullOrWhiteSpace(dataGridView1.Rows[currentRow].Cells[0].Value.ToString()))//kode
                     {
@@ -1047,7 +1068,7 @@ namespace inventory.Market
                         Connection.command = new OleDbCommand(queryItem, Connection.conn);
                         Connection.command.CommandType = CommandType.Text;
                         /*Connection.command.Parameters.AddWithValue("@KODELK", );*/
-                        Console.WriteLine("ddd d = " + dataGridView1.Rows[currentRow].Cells[0].Value.ToString());
+                        //Console.WriteLine("ddd d = " + dataGridView1.Rows[currentRow].Cells[0].Value.ToString());
                         reader = Connection.command.ExecuteReader();
                         if (reader.Read())
                         {
@@ -1079,99 +1100,14 @@ namespace inventory.Market
 
         void price_leaving(object sender, EventArgs e)//saat edit harga selesai, ubah format ke currency format
         {
-            /* Console.WriteLine("masuk price leaving");
-             //var tb = dataGridView1.EditingControl as TextBox;
-             int currentRow = dataGridView1.CurrentRow.Index;
-             int currentCell = dataGridView1.CurrentCell.ColumnIndex;
-             Double price = 0;
-
-             if (currentCell == 3)
-             {
-                 try
-                 {
-
-                     if (!String.IsNullOrWhiteSpace(dataGridView1.Rows[currentRow].Cells[3].Value.ToString()))//Qty
-                     {
-                         double value;
-                         if (Double.TryParse(dataGridView1[3, currentRow].Value.ToString(), out value))
-                         {
-                             price = value;
-                             dataGridView1[3, currentRow].Value = value;
-                         }
-                         else
-                         {
-                             price = 0; // discount will have null value
-                         }
-
-                     }
-                 }
-                 catch (Exception ex)
-                 {
-                     dataGridView1[3, currentRow].Value = 0;
-                 }
-
-
-                 Double qty = 0;//nilai qty
-                 Double harga = price;
-                 Double discount = 0;
-
-                 try
-                 {
-                     if (!String.IsNullOrEmpty(dataGridView1.Rows[currentRow].Cells[2].Value.ToString()))//Qty
-                     {
-                         double value;
-                         if (Double.TryParse(dataGridView1[2, currentRow].Value.ToString(), out value))
-                         {
-                             qty = value;
-                         }
-                         else
-                         {
-                             qty = 0; // discount will have null value
-                         }
-
-                     }
-                 }
-                 catch (Exception ex)
-                 {
-                     qty = 0;
-                 }
-
-                 try
-                 {
-                     if (!String.IsNullOrEmpty(dataGridView1.Rows[currentRow].Cells[4].Value.ToString()))//Qty
-                     {
-                         double value;
-                         if (Double.TryParse(dataGridView1[4, currentRow].Value.ToString(), out value))
-                         {
-                             discount = value;
-                         }
-                         else
-                         {
-                             discount = 0; // discount will have null value
-                         }
-                     }
-                 }
-                 catch (Exception ex)
-                 {
-                     discount = 0;
-                 }
-
-
-                 //Double qty = Double.Parse(dataGridView1[1, currentRow].Value != null && dataGridView1[1, currentRow].Value != "" ? dataGridView1[1, currentRow].Value.ToString() : "0");//nilai qty
-                 //Double harga = Double.Parse(dataGridView1[2, currentRow].Value != null && dataGridView1[1, currentRow].Value != "" ? dataGridView1[2, currentRow].Value.ToString() : "0");//nilai price
-                 //Double discount = Double.Parse(dataGridView1[3, currentRow].Value != null && dataGridView1[1, currentRow].Value != "" ? dataGridView1[3, currentRow].Value.ToString() : "0");//nilai discount
-                 Double subtotal = (qty * harga) - discount;
-                 dataGridView1[5, currentRow].Value = subtotal;
-             }*/
-
-            //var tb = dataGridView1.EditingControl as TextBox;
+           //var tb = dataGridView1.EditingControl as TextBox;
             int currentRow = dataGridView1.CurrentRow.Index;
             int currentCell = dataGridView1.CurrentCell.ColumnIndex;
-            Console.WriteLine(currentRow);
-            Console.WriteLine("currentCell price leaving = " + currentCell);
+            //Console.WriteLine(currentRow);
+            //Console.WriteLine("currentCell price leaving = " + currentCell);
             /*Console.WriteLine("qty = " + dataGridView1.Rows[currentRow].Cells[2].Value);
            */
-            Double qtytmp = 0;
+            Double qtytmp = 0;//ini bukan qty tp harga!!!
             if (currentCell == 3)
             {
                 try
@@ -1179,65 +1115,53 @@ namespace inventory.Market
                     string str = dataGridView1.Rows[currentRow].Cells[3].Value.ToString() != null ? dataGridView1.Rows[currentRow].Cells[3].Value.ToString() : null;
                     dataGridView1[3, currentRow].Value = double.Parse(dataGridView1.Rows[currentRow].Cells[3].Value.ToString());
 
-                    /*    if (dataGridView1.Rows[currentRow].Cells[2].Value.Equals(null) || dataGridView1.Rows[currentRow].Cells[2].Value.Equals(""))
-                        {
-                            dataGridView1[2, currentRow].Value = 0;
-                        }
-                        else if (double.Parse(dataGridView1.Rows[currentRow].Cells[2].Value.ToString()) < 1)
-                        {
-                            dataGridView1[2, currentRow].Value = 0;
-                        }
-                        else
-                        {
-
-                        }*/
+            
                     qtytmp = double.Parse(dataGridView1.Rows[currentRow].Cells[3].Value.ToString());
+                    //Console.WriteLine("qtytemmp == "+qtytmp);
                 }
                 catch (Exception ex)
                 {
                     dataGridView1[3, currentRow].Value = 0;
                 }
 
-                Double qty = qtytmp;//nilai qty
-                Double harga = 0;
+                Double qty = 0;//nilai qty
+                Double harga = qtytmp;
                 Double discount = 0;
 
                 try
                 {
-                    Console.WriteLine("aaa = " + dataGridView1[2, currentRow].Value.ToString());
+                    Console.WriteLine("aaa qty = " + dataGridView1[2, currentRow].Value.ToString());
                     if (!String.IsNullOrEmpty(dataGridView1[2, currentRow].Value.ToString()))//Qty
                     {
                         double value;
                         if (Double.TryParse(dataGridView1[2, currentRow].Value.ToString(), out value))
-                            harga = value;
+                            qty = value;
                         else
-                            harga = 0; // discount will have null value
+                            qty = 0; // discount will have null value
                     }
                 }
                 catch (Exception ex)
                 {
-                    harga = 0;
+                    qty = 0;
                 }
 
-                /*   try
-                   {
-                       if (!String.IsNullOrEmpty(dataGridView1[4, currentRow].Value.ToString()))//Qty
-                       {
-                           double value;
-                           if (Double.TryParse(dataGridView1[4, currentRow].Value.ToString(), out value))
-                               discount = value;
-                           else
-                               discount = 0; // discount will have null value
-                       }          
-                   }
-                   catch (Exception ex)
-                   {
-                       discount = 0;
-                   }*/
-
-
-
-                Double subtotal = (qty * harga) - discount;
+                try
+                {
+                    if (!String.IsNullOrEmpty(dataGridView1[4, currentRow].Value.ToString()))//Qty
+                    {
+                        double value;
+                        if (Double.TryParse(dataGridView1[4, currentRow].Value.ToString(), out value))
+                            discount = value;
+                        else
+                            discount = 0; // discount will have null value
+                    }
+                }
+                catch (Exception ex)
+                {
+                    discount = 0;
+                }
+                                
+                Double subtotal = qty * (harga - discount);
                 dataGridView1[5, currentRow].Value = subtotal;
             }
 
@@ -1249,8 +1173,8 @@ namespace inventory.Market
             //var tb = dataGridView1.EditingControl as TextBox;
             int currentRow = dataGridView1.CurrentRow.Index;
             int currentCell = dataGridView1.CurrentCell.ColumnIndex;
-            Console.WriteLine(currentRow);
-            Console.WriteLine("currentCell = "+ currentCell);
+            //Console.WriteLine(currentRow);
+            //Console.WriteLine("currentCell = "+ currentCell);
             /*Console.WriteLine("qty = " + dataGridView1.Rows[currentRow].Cells[2].Value);
            */
             Double qtytmp = 0;
@@ -1260,18 +1184,7 @@ namespace inventory.Market
                     string str = dataGridView1.Rows[currentRow].Cells[2].Value.ToString() != null ? dataGridView1.Rows[currentRow].Cells[2].Value.ToString() : null;
                     dataGridView1[2, currentRow].Value = double.Parse(dataGridView1.Rows[currentRow].Cells[2].Value.ToString());
 
-                    /*    if (dataGridView1.Rows[currentRow].Cells[2].Value.Equals(null) || dataGridView1.Rows[currentRow].Cells[2].Value.Equals(""))
-                        {
-                            dataGridView1[2, currentRow].Value = 0;
-                        }
-                        else if (double.Parse(dataGridView1.Rows[currentRow].Cells[2].Value.ToString()) < 1)
-                        {
-                            dataGridView1[2, currentRow].Value = 0;
-                        }
-                        else
-                        {
-
-                        }*/
+                  
                     qtytmp = double.Parse(dataGridView1.Rows[currentRow].Cells[2].Value.ToString());
                 }
                 catch (Exception ex)
@@ -1285,7 +1198,95 @@ namespace inventory.Market
 
                 try
                 {
-                    Console.WriteLine("aaa = " + dataGridView1[3, currentRow].Value.ToString());
+                    //Console.WriteLine("aaa = " + dataGridView1[3, currentRow].Value.ToString());
+                    if (!String.IsNullOrEmpty(dataGridView1[3, currentRow].Value.ToString()))//Qty
+                    {
+                        double value;
+                        if (Double.TryParse(dataGridView1[3, currentRow].Value.ToString(), out value))
+                            harga = value;
+                        else
+                            harga = 0; // discount will have null value
+                    }
+                }
+                catch (Exception ex)
+                {
+                    harga = 0;
+                }
+                Console.WriteLine("noll");
+                try
+                {
+
+                    if (dataGridView1[4, currentRow].Value == null || dataGridView1[4, currentRow].Value == DBNull.Value)
+                    {
+
+                        discount = 0;
+                    }
+                    else {
+                        discount = Double.Parse(dataGridView1[4, currentRow].Value.ToString());
+                    }
+                 
+                }
+                catch (Exception ex)
+                {
+                    discount = 0;
+                    //Console.WriteLine("masuk ke discount ex qty");
+                }
+
+
+
+                Double subtotal = qty * (harga - discount);
+                dataGridView1[5, currentRow].Value = subtotal;
+            }
+            
+          
+        }
+
+        void discount_leaving(object sender, EventArgs e)//saat edit harga selesai, ubah format ke currency format
+        {
+            //Console.WriteLine("masuk discount leaving");
+            int currentRow = dataGridView1.CurrentRow.Index;
+            int currentColumn = dataGridView1.CurrentCell.ColumnIndex;
+            double discountTxt = 0;
+
+            if (currentColumn == 4) {
+                try
+                {
+                    string str = dataGridView1.Rows[currentRow].Cells[4].Value.ToString() != null ? dataGridView1.Rows[currentRow].Cells[4].Value.ToString() : null;
+                    dataGridView1[4, currentRow].Value = double.Parse(dataGridView1.Rows[currentRow].Cells[4].Value.ToString());
+
+
+                    discountTxt = double.Parse(dataGridView1.Rows[currentRow].Cells[4].Value.ToString());
+                }
+                catch (Exception ex)
+                {
+                    dataGridView1[4, currentRow].Value = 0;
+                }
+
+
+                Double qty = 0;//nilai qty
+                Double harga = 0;
+                
+
+                try
+                {
+                    Console.WriteLine("aaa qty = " + dataGridView1[2, currentRow].Value.ToString());
+                    if (!String.IsNullOrEmpty(dataGridView1[2, currentRow].Value.ToString()))//Qty
+                    {
+                        double value;
+                        if (Double.TryParse(dataGridView1[2, currentRow].Value.ToString(), out value))
+                            qty = value;
+                        else
+                            qty = 0; // discount will have null value
+                    }
+                }
+                catch (Exception ex)
+                {
+                    qty = 0;
+                }
+
+                try
+                {
+                    //Console.WriteLine("aaa = " + dataGridView1[3, currentRow].Value.ToString());
                     if (!String.IsNullOrEmpty(dataGridView1[3, currentRow].Value.ToString()))//Qty
                     {
                         double value;
@@ -1300,112 +1301,18 @@ namespace inventory.Market
                     harga = 0;
                 }
 
-                /*   try
-                   {
-                       if (!String.IsNullOrEmpty(dataGridView1[4, currentRow].Value.ToString()))//Qty
-                       {
-                           double value;
-                           if (Double.TryParse(dataGridView1[4, currentRow].Value.ToString(), out value))
-                               discount = value;
-                           else
-                               discount = 0; // discount will have null value
-                       }          
-                   }
-                   catch (Exception ex)
-                   {
-                       discount = 0;
-                   }*/
 
 
-
-                Double subtotal = (qty * harga) - discount;
-                dataGridView1[5, currentRow].Value = subtotal;
-            }
-            
-          
-        }
-
-        void discount_leaving(object sender, EventArgs e)//saat edit harga selesai, ubah format ke currency format
-        {
-            Console.WriteLine("masuk discount leaving");
-            int currentRow = dataGridView1.CurrentRow.Index;
-            int currentColumn = dataGridView1.CurrentCell.ColumnIndex;
-            Double discountTxt = 0;
-
-            if (currentColumn == 4) {
-                try
-                {
-                   if (dataGridView1.Rows[currentRow].Cells[4].Value == null || dataGridView1.Rows[currentRow].Cells[4].Value == DBNull.Value || String.IsNullOrWhiteSpace(dataGridView1.Rows[currentRow].Cells[4].Value.ToString()))
-                    {
-                        Console.WriteLine("KOSONG KINTIL");
-                    }
-                    string discountText = dataGridView1.Rows[currentRow].Cells[4].Value.ToString();
-                    if (discountText == "")
-                    {
-                        dataGridView1[4, currentRow].Value = 0;
-                    }
-                    else if (Double.Parse(discountText) < 1)
-                    {
-                        dataGridView1[4, currentRow].Value = 0;
-                    }
-                    else
-                    {
-                        string str = discountText != null ? discountText : null;
-                        dataGridView1[4, currentRow].Value = Double.Parse(discountText);
-                    }
-                    discountTxt = Double.Parse(discountText);
-
-                }
-                catch (Exception ex)
-                {
-                    dataGridView1[4, currentRow].Value = 0;
-                }
-
-
-                Double qty = 0;//nilai qty
-                Double harga = 0;
-                Double discount = discountTxt;
-
-                if (currentColumn == 2)
-                {
-                    try
-                    {
-                        if (!String.IsNullOrEmpty(dataGridView1[2, currentRow].Value.ToString()))//Qty
-                        {
-                            double value;
-                            if (Double.TryParse(dataGridView1[2, currentRow].Value.ToString(), out value))
-                                qty = value;
-                            else
-                                qty = 0; // discount will have null value
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        qty = 0;
-                    }
-                }
-
-                if (currentColumn == 3)
-                {
-                    if (!String.IsNullOrWhiteSpace(dataGridView1[3, currentRow].Value.ToString()))//Qty
-                    {
-                        double value;
-                        if (Double.TryParse(dataGridView1[3, currentRow].Value.ToString(), out value))
-                            harga = value;
-                        else
-                            harga = 0; // discount will have null value
-                    }
-                }
-
-
-
-
+                //Console.WriteLine("-------------------- = ");
+                //Console.WriteLine("QTY = " + qty);
+                //Console.WriteLine("harga = " + harga);
+                //Console.WriteLine("discountTxt = " + discountTxt);
 
 
                 //Double qty = Double.Parse(dataGridView1[1, currentRow].Value != null ? dataGridView1[1, currentRow].Value.ToString() : "0");//nilai qty
                 //Double harga = Double.Parse(dataGridView1[2, currentRow].Value != null ? dataGridView1[2, currentRow].Value.ToString() : "0");//nilai price
                 //Double discount = Double.Parse(dataGridView1[3, currentRow].Value != null ? dataGridView1[3, currentRow].Value.ToString() : "0");//nilai discount
-                Double subtotal = (qty * harga) - discount;
+                Double subtotal = qty * (harga - discountTxt);
                 dataGridView1[5, currentRow].Value = subtotal;
             }
            
@@ -1437,39 +1344,39 @@ namespace inventory.Market
             Double qty = 0;
             Double discount = 0;
 
-           /* try
-            {
-                Console.WriteLine("aaa = " + dataGridView1[2, currentRow].Value.ToString());
-                if (!String.IsNullOrWhiteSpace(dataGridView1[2, currentRow].Value.ToString()))//Qty
-                {
-                    double value;
-                    if (Double.TryParse(dataGridView1[2, currentRow].Value.ToString(), out value))
-                        qty = value;
-                    else
-                        qty = 0; // discount will have null value
-                }
-            }
-            catch (Exception ex)
-            {
-                qty = 0;
-            }*/
+            /* try
+             {
+                 Console.WriteLine("aaa = " + dataGridView1[2, currentRow].Value.ToString());
+                 if (!String.IsNullOrWhiteSpace(dataGridView1[2, currentRow].Value.ToString()))//Qty
+                 {
+                     double value;
+                     if (Double.TryParse(dataGridView1[2, currentRow].Value.ToString(), out value))
+                         qty = value;
+                     else
+                         qty = 0; // discount will have null value
+                 }
+             }
+             catch (Exception ex)
+             {
+                 qty = 0;
+             }*/
 
 
-           /* try
-            {
-                if (!String.IsNullOrEmpty(dataGridView1[4, currentRow].Value.ToString()))//discount
-                {
-                    double value;
-                    if (Double.TryParse(dataGridView1[4, currentRow].Value.ToString(), out value))
-                        discount = value;
-                    else
-                        discount = 0; // discount will have null value
-                }
-            }
-            catch (Exception ex)
-            {
-                discount = 0; // discount will have null value
-            }*/
+            /* try
+             {
+                 if (!String.IsNullOrEmpty(dataGridView1[4, currentRow].Value.ToString()))//discount
+                 {
+                     double value;
+                     if (Double.TryParse(dataGridView1[4, currentRow].Value.ToString(), out value))
+                         discount = value;
+                     else
+                         discount = 0; // discount will have null value
+                 }
+             }
+             catch (Exception ex)
+             {
+                 discount = 0; // discount will have null value
+             }*/
 
             //Double qty      = Double.TryParse(dataGridView1[1, currentRow].Value != null && dataGridView1[1, currentRow].Value != "" ? dataGridView1[1, currentRow].Value.ToString() : "0");//nilai qty
             //Double harga    = Double.Parse(reader["price"].ToString());//nilai harga
@@ -1515,7 +1422,7 @@ namespace inventory.Market
 
                 update_sub_label(idsalesorder.Text);
 
-                string queryAmbilSetelahInsert = "SELECT I.CODE AS CODE,I.NAME AS NAME,SO.QTY AS QTY ,SO.PRICE AS PRICE, SO.DISCOUNT AS DISCOUNT, (SO.QTY * SO.PRICE - SO.DISCOUNT) AS SUBTOTAL, SO.DESCRIPTION AS DESCRIPTION,SO.ITEM_ID AS ID FROM INVOICE_DETAIL SO INNER JOIN ITEM I ON SO.ITEM_ID = I.ID WHERE SO.INVOICE_ID=" + idsalesorder.Text;
+                string queryAmbilSetelahInsert = "SELECT I.CODE AS CODE,I.NAME AS NAME,SO.QTY AS QTY ,SO.PRICE AS PRICE, SO.DISCOUNT AS DISCOUNT, (SO.QTY * (SO.PRICE - SO.DISCOUNT)) AS SUBTOTAL, SO.DESCRIPTION AS DESCRIPTION,SO.ITEM_ID AS ID FROM INVOICE_DETAIL SO INNER JOIN ITEM I ON SO.ITEM_ID = I.ID WHERE SO.INVOICE_ID=" + idsalesorder.Text;
 
                 OleDbCommand cmd = new OleDbCommand(queryAmbilSetelahInsert, Connection.conn);
                 OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -1584,6 +1491,10 @@ namespace inventory.Market
                 tanggalTxt.Value = Convert.ToDateTime(reader["invoice_date"]);
                 cmbCustomer.SelectedValue = reader["customer_id"].ToString();
                 cmbWarehouse.SelectedValue = reader["warehouse_id"].ToString();
+                nopo.Text = reader["nopo"].ToString();
+                Decimal nilaiDesimal = reader.GetDecimal(reader.GetOrdinal("discountTot"));
+                Console.WriteLine("persen ==== " + nilaiDesimal);
+                persenTxt.Value = nilaiDesimal;
                
 
                 if (reader["pajak_id"].ToString() == "")
@@ -2015,6 +1926,37 @@ namespace inventory.Market
             }//for 
             cryRpt.PrintToPrinter(1, true, 0, 0);
             cryRpt.Refresh();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void persenTxt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void persenTxt_ValueChanged(object sender, EventArgs e)
+        {// Konversi nilai ke format desimal dengan titik sebagai pemisah desimal
+            string value = persenTxt.Value.ToString().Replace('.', ',');
+
+            // Konversi nilai ke tipe data double
+            if (double.TryParse(value, out double parsedValue))
+            {
+                // Pastikan nilai tidak melebihi 100
+                if (parsedValue > 100)
+                {
+                    // Jika melebihi 100, atur nilai kembali menjadi 100
+                    persenTxt.Value = 100;
+                }
+            }
         }
     }
 }

@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\Users\vpc2\Documents\publish\</PublishUrl>
+    <PublishUrl>C:\Users\bobby\Documents\Inventory Release\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -62,6 +62,26 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\x64\Release\inventory.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -142,6 +162,16 @@
     </Compile>
     <Compile Include="Gudang.Designer.cs">
       <DependentUpon>Gudang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_BARUDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVENTORY_BARUDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTORY_BARUDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INVENTORY_BARUDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Item.cs">
       <SubType>Form</SubType>
@@ -273,6 +303,13 @@
       <SubType>Component</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="reporting\BuktiSalesInvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BuktiSalesInvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
     <Compile Include="reporting\BuktiSalesInvoiceTanpaHarga.cs">
       <DependentUpon>BuktiSalesInvoiceTanpaHarga.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -287,10 +324,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="reporting\BuktiSalesInvoice.cs">
+    <Compile Include="reporting\BuktiSalesInvoiceGD.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BuktiSalesInvoice.rpt</DependentUpon>
+      <DependentUpon>BuktiSalesInvoiceGD.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
@@ -300,6 +337,12 @@
       <DependentUpon>BuktiSalesOrder.rpt</DependentUpon>
       <SubType>Component</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="FormCekBarangCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCekBarangCustomer.Designer.cs">
+      <DependentUpon>FormCekBarangCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="reporting\LaporanPembelian.cs">
       <AutoGen>True</AutoGen>
@@ -313,7 +356,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LaporanPenjualan.rpt</DependentUpon>
       <SubType>Component</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="reporting\ReportViewerDeliveryOrder.cs">
       <SubType>Form</SubType>
@@ -480,11 +523,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <EmbeddedResource Include="Purchase\PurchaseInvoice.resx">
       <DependentUpon>PurchaseInvoice.cs</DependentUpon>
@@ -525,6 +570,11 @@
       <LastGenOutput>BuktiReceivedItem.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="reporting\BuktiSalesInvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BuktiSalesInvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="reporting\BuktiSalesInvoiceTanpaHarga.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BuktiSalesInvoiceTanpaHarga.cs</LastGenOutput>
@@ -535,15 +585,18 @@
       <LastGenOutput>BuktiSalesInvoice-dinga.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="reporting\BuktiSalesInvoice.rpt">
+    <EmbeddedResource Include="reporting\BuktiSalesInvoiceGD.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BuktiSalesInvoice.cs</LastGenOutput>
+      <LastGenOutput>BuktiSalesInvoiceGD.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="reporting\BuktiSalesOrder.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BuktiSalesOrder.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCekBarangCustomer.resx">
+      <DependentUpon>FormCekBarangCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporting\LaporanPembelian.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -553,7 +606,7 @@
     <EmbeddedResource Include="reporting\LaporanPenjualan.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>LaporanPenjualan.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="reporting\ReportViewerDeliveryOrder.resx">
       <DependentUpon>ReportViewerDeliveryOrder.cs</DependentUpon>
@@ -598,20 +651,46 @@
       <DependentUpon>User.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
+    <None Include="INVENTORY_BARUDataSet.xsc">
+      <DependentUpon>INVENTORY_BARUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="INVENTORY_BARUDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVENTORY_BARUDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVENTORY_BARUDataSet.xss">
+      <DependentUpon>INVENTORY_BARUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="INVENTORY_BARUDataSet1.xsc">
+      <DependentUpon>INVENTORY_BARUDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="INVENTORY_BARUDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>INVENTORY_BARUDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="INVENTORY_BARUDataSet1.xss">
+      <DependentUpon>INVENTORY_BARUDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="inventory_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
@@ -635,6 +714,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-web.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="INVENTORY BARU.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

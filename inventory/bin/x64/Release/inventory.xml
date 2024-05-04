@@ -1,0 +1,1553 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>inventory</name>
+    </assembly>
+    <members>
+        <member name="F:inventory.Category.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Category.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Category.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.CompanyInfo.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.CompanyInfo.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.CompanyInfo.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.copyright.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.copyright.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.copyright.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Customer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Customer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Customer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.DesignFor.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.DesignFor.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.DesignFor.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.formpickdate.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.formpickdate.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.formpickdate.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.GroupItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.GroupItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.GroupItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Gudang.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Gudang.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Gudang.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.categoryDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.cifDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.customerDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.deliveryorderDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.deliveryorder_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_customerDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_itemDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_supplierDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoiceDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.itemDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pajakDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudangDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudang_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseinvoiceDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseinvoice_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseorderDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseorder_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditemDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditem_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.salesorderDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.salesorder_detailDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.sequence_storeDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.supplierDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.unitDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.usersDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouseDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouse_itemDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktideliveryorderDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipindahgudangDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipurchaseinvoiceDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipurchaseorderDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktisalesinvoiceDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buuktisalesorderDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_QueryDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_Query1DataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudang_QueryDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditem_QueryDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouse_QueryDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.categoryRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.cifRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.customerRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.deliveryorderRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.deliveryorder_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_customerRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_itemRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_supplierRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoiceRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.itemRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pajakRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudangRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudang_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseinvoiceRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseinvoice_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseorderRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseorder_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditemRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditem_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.salesorderRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.salesorder_detailRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.sequence_storeRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.supplierRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.unitRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.usersRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouseRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouse_itemRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktideliveryorderRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipindahgudangRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipurchaseinvoiceRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipurchaseorderRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktisalesinvoiceRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buuktisalesorderRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_QueryRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_Query1Row">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudang_QueryRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditem_QueryRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouse_QueryRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.categoryRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.cifRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.customerRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.deliveryorderRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.deliveryorder_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_customerRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_itemRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.group_supplierRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoiceRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.itemRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pajakRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudangRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudang_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseinvoiceRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseinvoice_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseorderRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.purchaseorder_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditemRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditem_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.salesorderRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.salesorder_detailRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.sequence_storeRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.supplierRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.unitRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.usersRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouseRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouse_itemRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktideliveryorderRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipindahgudangRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipurchaseinvoiceRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktipurchaseorderRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buktisalesinvoiceRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.buuktisalesorderRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_QueryRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.invoice_Query1RowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.pindah_gudang_QueryRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.receiveditem_QueryRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet.warehouse_QueryRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.categoryTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.cifTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.customerTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.deliveryorderTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.deliveryorder_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.group_customerTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.group_itemTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.group_supplierTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.invoiceTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.invoice_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.itemTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.pajakTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.pindah_gudangTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.pindah_gudang_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.purchaseinvoiceTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.purchaseinvoice_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.purchaseorderTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.purchaseorder_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.receiveditemTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.receiveditem_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.salesorderTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.salesorder_detailTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.sequence_storeTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.supplierTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.unitTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.usersTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.warehouseTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.warehouse_itemTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.buktideliveryorderTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.buktipindahgudangTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.buktipurchaseinvoiceTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.buktipurchaseorderTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.buktisalesinvoiceTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.buuktisalesorderTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.invoice_QueryTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.invoice_Query1TableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.pindah_gudang_QueryTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.receiveditem_QueryTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.warehouse_QueryTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(inventory.INVENTORY_BARUDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(inventory.INVENTORY_BARUDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(inventory.INVENTORY_BARUDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.UpdateAll(inventory.INVENTORY_BARUDataSet)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1">
+             <summary>
+            Represents a strongly typed in-memory cache of data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1.invoice_QueryDataTable">
+             <summary>
+            Represents the strongly named DataTable class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1.invoice_QueryRow">
+             <summary>
+            Represents strongly named DataRow class.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1.invoice_QueryRowChangeEvent">
+             <summary>
+            Row event argument class
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1TableAdapters.invoice_QueryTableAdapter">
+             <summary>
+            Represents the connection and commands used to retrieve and save data.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager">
+             <summary>
+            TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(inventory.INVENTORY_BARUDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Update rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(inventory.INVENTORY_BARUDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Insert rows in top-down order.
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(inventory.INVENTORY_BARUDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Delete rows in bottom-up order.
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+             <summary>
+            Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+            </summary>
+        </member>
+        <member name="M:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.UpdateAll(inventory.INVENTORY_BARUDataSet1)">
+             <summary>
+            Update all changes to the dataset.
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+             <summary>
+            Update Order Option
+            </summary>
+        </member>
+        <member name="T:inventory.INVENTORY_BARUDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+             <summary>
+            Used to sort self-referenced table's rows
+            </summary>
+        </member>
+        <member name="F:inventory.Item.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Item.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Item.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.KelompokCustomer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.KelompokCustomer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.KelompokCustomer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.KelompokSupplier.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.KelompokSupplier.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.KelompokSupplier.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.frompickdatebuy.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.frompickdatebuy.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.frompickdatebuy.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.LoginForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.LoginForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.LoginForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Market.DeliveryOrder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Market.DeliveryOrder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Market.DeliveryOrder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Market.ReturInvoice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Market.ReturInvoice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Market.ReturInvoice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Market.SalesInvoice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Market.SalesInvoice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Market.SalesInvoice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Market.SalesOrder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Market.SalesOrder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Market.SalesOrder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.MDIForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.MDIForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.MDIForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Pajak.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Pajak.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Pajak.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:inventory.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="F:inventory.Purchase.PurchaseInvoice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Purchase.PurchaseInvoice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Purchase.PurchaseInvoice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Purchase.PurchaseOrder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Purchase.PurchaseOrder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Purchase.PurchaseOrder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Purchase.ReceivedItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Purchase.ReceivedItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Purchase.ReceivedItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.history.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.history.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.history.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerDeliveryOrder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerDeliveryOrder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerDeliveryOrder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerLaporanPembelian.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerLaporanPembelian.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerLaporanPembelian.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerLaporanPenjualan.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerLaporanPenjualan.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerLaporanPenjualan.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerPindahGudang.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerPindahGudang.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerPindahGudang.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerPurchaseInvoice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerPurchaseInvoice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerPurchaseInvoice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerPurchaseOrder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerPurchaseOrder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerPurchaseOrder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerReceivedItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerReceivedItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerReceivedItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerSalesInvoice.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerSalesInvoice.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerSalesInvoice.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.reporting.ReportViewerSalesOrder.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerSalesOrder.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.reporting.ReportViewerSalesOrder.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.StockChange.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.StockChange.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.StockChange.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.StockItem.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.StockItem.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.StockItem.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Supplier.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Supplier.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Supplier.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.Unit.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.Unit.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.Unit.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:inventory.User.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:inventory.User.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:inventory.User.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:inventory.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:inventory.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:inventory.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:inventory.Properties.Resources.logo_web">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+    </members>
+</doc>
